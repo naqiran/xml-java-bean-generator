@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.naqiran.com/beans-validator/" targetNamespace="http://www.naqiran.com/beans-validator/" elementFormDefault="qualified">
+    <xs:element name="beans" type="beansType"></xs:element>
+    <xs:complexType name="beansType">
+    	<xs:sequence>
+    		<xs:element name="bean" type="beanType" maxOccurs="unbounded"></xs:element>
+    	</xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="beanType">
+    	<xs:sequence>
+    		<xs:element name="attributes" maxOccurs="1">
+    			<xs:complexType>
+    				<xs:sequence>
+    					<xs:element name="attribute" type="attributeType" maxOccurs="unbounded"/>
+    				</xs:sequence>
+    			</xs:complexType>
+    		</xs:element>
+    	</xs:sequence>
+    	<xs:attribute name="name" type="xs:string" use="required"/>
+    	<xs:attribute name="packageName" type="xs:string"/>
+    	<xs:attribute name="extendsName" type="xs:string"/>
+    </xs:complexType>
+    <xs:complexType name="attributeType">
+    	<xs:attribute name="name" type="xs:string" use="required"/>
+    	<xs:attribute name="type" type="xs:string" use="required"/>
+    	<xs:attribute name="fieldAnnotations" type="xs:string"/>
+    </xs:complexType>
+</xs:schema>

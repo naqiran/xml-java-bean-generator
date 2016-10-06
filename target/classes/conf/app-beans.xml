@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.naqiran.com/beans-validator/">
+	<bean name="Test" packageName="com.nak.test">
+		<attributes>
+			<attribute name="one" type="java.lang.String"/>
+		</attributes>
+	</bean>
+	<bean name="Test1" packageName="com.nak.test" extendsName="com.nak.test.Test">
+		<attributes>
+			<attribute name="one" type="java.lang.String" fieldAnnotations="org.apache.solr.client.solrj.beans.Field"/>
+			<attribute name="two" type="java.lang.String"/>
+			<attribute name="three" type="java.lang.String"/>
+			<attribute name="five" type="java.lang.String"/>
+		</attributes>
+	</bean>
+</beans>
